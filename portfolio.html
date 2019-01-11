@@ -129,6 +129,58 @@
 					<h1>axes6[1].imshow(earth_small)</h1>
 					<h1>fig6.show()
 					</h1>
+		        </details>
+				<h1>---Graphing the Data---</h1>
+				<h1>Yoonseo and I graphed this</h1>
+				<img src="images/Graph.png" height="1800">
+				<h1>We collected data from UC schools and saved those by (year).txt</h1>
+				<h1>In the text file, we collected data by school and acceptance rate in percentage, ex) UCLA,26.1</h1>
+			<details>
+                  	<summary>Open collapsed code for this graphing by clicking here</summary>
+				
+				<h1>import os.path</h1>
+				<br/>
+				<h1># Get the directory name for data files</h1>
+				<h1>directory = os.path.dirname(os.path.abspath(__file__)) </h1>
+				<br/>
+				<h1>name1='UCLA'</h1>
+				<h1>name2='UCBerkeley' </h1>
+				<br/>
+				<h1>#initialize the aggregators</h1>
+				<h1>years1=[]</h1>
+				<h1>number_of_people1=[]</h1>
+				<h1>years2=[]</h1>
+				<h1>number_of_people2=[]</h1>
+				<br/>
+				<h1># Scan one year's file at a time</h1>
+				<h1>for year in range(2000,2017):</h1>
+				<h1>    # Open the file</h1>
+				<h1>    filename = os.path.join(directory, 'UC'+str(year)+'.txt')</h1>
+				<h1>    datafile = open(filename,'r')</h1>
+				<h1>    # Go through all the names that year</h1>
+				<h1>    for line in datafile:</h1>
+				<h1>	name, rate = line.split(',')</h1>
+				<h1>	# Aggregate based on name1</h1>
+				<h1>	if name == name1 :</h1>
+				<h1>	    years1 += [year]</h1>
+				<h1>	    number_of_people1 += [rate]    </h1>
+				<h1>	#Aggregate based on name2</h1>
+				<h1>	if name == name2 :</h1>
+				<h1>	    years2 += [year]</h1>
+				<h1>	    number_of_people2 += [rate]        </h1>
+				<h1>    #Close that year's file</h1>
+				<h1>    datafile.close()</h1>
+				<br/>
+				<h1># Plot on one set of axes.</h1>
+				<h1>import matplotlib.pyplot as plt</h1>
+				<h1>fig, ax = plt.subplots(1,1)</h1>
+				<h1>ax.plot(years1,number_of_people1,'#0000FF')</h1>
+				<h1>ax.plot(years2,number_of_people2,'#FF00FF')</h1>
+				<br/>
+				<h1>ax.set_title('Acceptance rate of UCLA(Blue) and UC Berkeley(Red)')</h1>
+				<br/>
+				<h1>fig.show()</h1>
+				
 
 			</details>
 		  
