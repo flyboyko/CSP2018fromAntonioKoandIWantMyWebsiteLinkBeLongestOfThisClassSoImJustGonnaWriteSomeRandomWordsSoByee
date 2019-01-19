@@ -184,6 +184,67 @@
 
 			</details>
 		  
+		  <h1>---Simulation---</h1>
+		  <h1>Yoonseo and I modified the code of simulation draw circles</h1>
+		  <h1>Original</h1>
+		  <img src="images/circle1.png" height="1000">
+		  <h1>Modified</h1>
+		  <img src="images/circle2.png" height="1000">
+		  <h1>This is Code that I modified</h1>
+		  
+		  <details>
+                  	<summary>Open collapsed code for this graphing by clicking here</summary>
+			  
+			  <h1>to setup</h1>
+			    <h1>setup-circle radius number</h1>
+			    <h1>reset-ticks</h1>
+			  <h1>end</h1>
+<br/>
+		  	  <h1>to setup-circle [r n]</h1>
+			    <h1>clear-all</h1>
+			    <h1>set-default-shape turtles "circle"</h1>
+			    <h1>;; turtles should be evenly spaced around the circle</h1>
+			    <h1>create-ordered-turtles n [</h1>
+			    <h1>set size 0.1  ;; easier to see</h1>
+			    <h1>fd r</h1>
+			    <h1>rt 90</h1>
+			  <h1>]</h1>
+			  <h1>end</h1>
+<br/>
+			 <h1>to all-circle</h1>
+			  <h1>circle radius</h1>
+			  <h1>display</h1>
+			  <h1>end</h1>
+<br/>
+			<h1>to circle [r]</h1>
+			  <h1>ask turtles [ move-along-circle r ]</h1>
+			  <h1>if plot? [ update-plots ]</h1>
+			<h1>end</h1>
+<br/>
+			<h1>to move-along-circle [r]</h1>
+			  <h1>fd (pi * r / 180)</h1>
+			  <h1>rt speed / 50</h1>
+			<h1>end</h1>
+<br/>
+			<h1>to zero-circle</h1>
+			  <h1>ask turtle 0</h1>
+			    <h1>[ pen-down</h1>
+			      <h1>move-along-circle radius ]</h1>
+			  <h1>display</h1>
+			<h1>end</h1>
+<br/>
+			<h1>to draw-circle</h1>
+			  <h1>clear-drawing</h1>
+			  <h1>create-turtles 1</h1>
+			    <h1>[ set color gray - 3</h1>
+			      <h1>set size 2 * draw-radius</h1>
+			      <h1>set shape "circle"</h1>
+			      <h1>stamp</h1>
+			      <h1>die ]</h1>
+			<h1>end</h1>
+
+		  	</details>
+		  
     <audio autoplay>
       <source src="audio/heman.mp3" type="audio/mpeg"
       </audio>
